@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #4a79df, #082b52);
+}
+.btn_pub{
+    margin-left: 100px;
+    background-color: rgb(65, 131, 65);
+}
+.btn-dark{
+    background-color: rgb(127, 131, 65);
+}
+.container{
+color: black;
+width: 60%;
+}

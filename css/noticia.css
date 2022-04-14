@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:"arial";
+    color:black;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #4a79df, #082b52);
+}
+.imgus{
+    position: relative;
+    left: 900%;
+    height: 45px;
+    width: 45px;
+    border-radius: 500px;
+}
+.textus{
+    position: absolute;
+    color:white;
+    font-size: 20px;
+    left: 90%;
+    top: 25%;
+   
+}
+#iniciop{
+
+    width: 81%;
+    height: auto; 
+    overflow: hidden;
+    margin: 10px auto;
+    background:  rgba(192, 235, 163, 0.637);
+}
+
+.enlace{
+    text-decoration: none;
+}
+#publicaciones a .titulo{
+
+    font-size: 30px;
+    font-family: monospace;
+    color: rgb(11, 28, 175);
+    transition: color .3s;
+}
+#publicaciones a .titulo:hover{
+
+    color: rgb(221, 7, 0);
+
+}
+#publicaciones .datos{
+    color: rgb(65, 25, 25);
+    opacity: .7;
+    transition: color .3s;
+    transition: opacity .3s;
+
+}
+#publicaciones .datos:hover{
+    color:   rgb(1, 2, 97);
+    opacity: 1;
+}
+#publicaciones .img-post{
+    width: 300px;
+    height: 200px;
+  
+
+}
+#publicaciones .comentarios{
+    background: rgb(208, 208, 253);
+
+    padding:5px;
+    margin: 15px;
+    position: static;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.container{
+    float: right;
+}
+.cont {
+    align-self: center;
+    color: black;
+}
+button{
+    color: rgb(143, 138, 138);
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+button:active{
+    color: rgb(24, 153, 22);
+    transform: scale(1.2);
+}
+.btn{
+    width: 30px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 20px;
+    margin: 0px;
+}
+.btn_num{
+    color: black;
+    background: none;
+    outline: none;
+    border:none;
+    pointer-events: none;
+}
+.incoment{
+    font-size: 18px;
+    width: 50%;
+}
+

@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body{
+        font-family:"arial";
+        color:black;
+    background: linear-gradient(-45deg, #4a79df, #082b52);
+       background-size: cover;
+    }
+ 
+    .imgus{
+        position: relative;
+        top: 50%;
+        left: 850%;
+        height: 45px;
+        width: 45px;
+        border-radius: 500px;
+    }
+    .textus{
+        position: absolute;
+        color:white;
+        font-size: 20px;
+        left: 90%;
+        top: 25%;
+       
+    }
+.header{
+    max-height: 400px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
+    background-color: brown;
+    /*background-image: url(https://blog.spoongraphics.co.uk/wp-content/uploads/2020/06/thumbnail.png);*/
+}
+
+.btn{
+    font-size: 15px;
+   background: rgb(233, 56, 56);
+   color: rgb(255, 255, 255);
+   padding:5px;
+   margin: 5px;
+   position: absolute;
+   bottom: 30%;
+   left: 60%;
+   border-radius: 5px;
+   text-decoration: none;
+   }
+ .edit{
+     font-size: 15px;
+    background: rgb(139, 56, 233);
+    color: rgb(255, 255, 255);
+    padding:5px;
+    margin: 5px;
+    position: absolute;
+    bottom: 30%;
+    left: 30%;
+    border-radius: 5px;
+    text-decoration: none;
+    }
+    .cerrar{
+        font-size: 15px;
+    background: rgba(103, 98, 110, 0.473);
+    color: rgb(255, 255, 255);
+    
+    position: absolute;
+    bottom: 69%;
+    left: 90%;
+    float: right;
+    border-radius: 5px;
+    text-decoration: none;
+    }
+.fot-usuario{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #77faf3f1;
+    border-radius: 500px;
+}
+.navbar{
+    margin: 0px !important;
+}
