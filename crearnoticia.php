@@ -82,6 +82,10 @@
               <textarea class="form-control" name="noticia" id="exampleFormControlTextarea1" id="noti" ></textarea>
               <h4 class="text-black">Categoria</h4>
               <select class="form-control" name="categoria" id="exampleFormControlSelect1" id="cat_noti">
+              <?php
+        
+
+        ?>
                 <option>Salud</option>
                 <option>Deportes</option>
                 <option>Titulares</option>
