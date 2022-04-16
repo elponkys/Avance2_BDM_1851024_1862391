@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
 include "../classes/seccion-class.php";
 
 if(isset($_POST["submit"])){

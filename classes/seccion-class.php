@@ -1,5 +1,5 @@
 <?php
-include "../classes/seccion.class.php";
+include "../classes/seccion.connect.php";
  class SeccionContr extends RegisterSeccion{
 
    
@@ -9,7 +9,7 @@ include "../classes/seccion.class.php";
     private $usuario;
    
 public function __construct($seccion,$orden,$color,$usuario){
-
+    
 $this->seccion=$seccion;
 $this->orden=$orden;
 $this->color=$color;
@@ -22,26 +22,13 @@ public function registroSeccion(){
         header("location: ./Registro.php?error=emptyInput");
         exit();
     }
-    if( $this->matchpass()==false){
-        header("location: ./Registro.php?error=contraseñaIncorrecta");
-        exit();
-    }
-    $this->register($this->nombre,$this->apellido_m,$this->apellido_p,$this->email,$this->contraseña,$this->telefono,$this->imagen);
+  
+    $this->register($this->seccion,$this->orden,$this->color,$this->usuario);
 }
 
-private function matchpass(){
-    $result;
-    if($this->contraseña !== $this->confirm){
-        $result = false;
-    }else{
-        $result = true;
-    }
-return $result;
-
-}
 private function emptyInputs(){
     $result;
-    if(empty($this->email) || empty($this->nombre) || empty($this->apellido_m) || empty($this->apellido_p) || empty($this->contraseña) || empty($this->telefono) || empty($this->confirm)){
+    if(empty($this->seccion) || empty($this->orden) || empty($this->color) ){
         $result = false;
     }else{
         $result=true;

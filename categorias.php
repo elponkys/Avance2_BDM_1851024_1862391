@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +69,7 @@
       <div class="main">     
         <h2>Nuevas categorias</h2>
         <!--cards -->
-        <form action="includes/crear_seccion_inc.php" enctype="multipart/form-data" method="POST" id="crearseccion">
+        <form action="includes/crear_seccion_inc.php"  method="POST" id="crearseccion">
             <div class="card cat">   
                 <h4 class="text-black">Categoria</h4>
                 <input type="text" name="categoria" class = "form-control" id="cate">
@@ -73,7 +77,7 @@
                 <input type="text" name="orden" class = "form-control" id="orden">
                 <label for="exampleColorInput" class="form-label">Color picker</label>
                 <input type="color" name="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Color">
-                <input type="submit"id="btn_secc" value="Crear categoria"></input>
+                <input type="submit" name="submit" id="btn_secc" value="Crear categoria"></input>
             </div>
       </form>
       </div>
