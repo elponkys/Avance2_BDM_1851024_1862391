@@ -38,7 +38,7 @@ session_start();
         <?php
         if (isset($_SESSION["Tipo"]) && $_SESSION["Tipo"] == "Reportero") {
         ?>
-          <li><a href="#">Crear noticia</a></li>
+          <li><a href="#" onclick="window.location.href='crearnoticia.php'" >Crear noticia</a></li>
           <li><a href="#">Mis noticias</a></li>
 
         <?php
