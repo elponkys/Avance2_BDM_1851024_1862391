@@ -4,9 +4,9 @@ $(document).ready (function(){
         type: "POST",
         url: './includes/combo_seccion_inc.php',
         data: $(this).serialize(),
-        success: function(response)
-        
+        success: function(response) 
         {
+            alert(response);
             var categories = $.parseJSON(response);
             for(let category of categories){
                 $("select").append(' <option id="'+category['SECCION_ID']+'">'+category['DESCRIPCION']+'</option>')
