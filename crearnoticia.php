@@ -82,7 +82,8 @@
               <h4 class="text-black">Noticia</h4>
               <textarea class="form-control" name="noticia" id="exampleFormControlTextarea1" id="noti" ></textarea>
               <h4 class="text-black">Categoria</h4>
-              <select class="form-control" name="categoria" id="exampleFormControlSelect1" id="cat_noti">
+              <select class="form-control" name="categoria"  id="cat_noti">
+                
               <?php
         
 
@@ -91,11 +92,13 @@
                 <option>Deportes</option>
                 <option>Titulares</option>
               </select>
+              <div class="cat-conteiner">
+              </div>
             </div>
               <div class="container2" >
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Inserte elementos multimedia</label>
-                  <input class="form-control" type="file" id="formFile">
+                  <input class="form-control" type="file" multiple id="formFile">
                   </div>
                   <input type="submit" class="btn btn_pub" id="btn_noti" value="Publicar"></input>
                 </div>

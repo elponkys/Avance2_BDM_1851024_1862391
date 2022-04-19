@@ -21,6 +21,18 @@ $(document).ready (function(){
         window.location.href = 'noticia.html';
 
     });
+
+    $("#cat_noti").change(function(){
+        var select = $(this).children("option:selected").val();
+        $(".cat-conteiner").append('<label class="ci">'+select+' <button type="button" class="deletec" onClick=" $(this).parent().remove();">X</button></label>')
+    });
+    $(".deletec").on("click",function(){
+       
+    });
+    function remove(){
+        $(this).parent().remove();
+        alert("hola");
+    }
     /*Para subir noticia y validar que se llenen los campos*/
     $("#newnoti").submit(function(){
 
