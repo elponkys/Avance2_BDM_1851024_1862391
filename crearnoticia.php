@@ -64,7 +64,7 @@
     </div>
   </nav>
       <div class="container">
-        <form action="includes/crear_noticia_inc.php" id="newnoti" enctype="multipart/form-data" method="POST">
+        <form  id="newnoti" enctype="multipart/form-data" method="POST">
             <div class="form-group text">
               <h1 class="text-black">Nueva noticia</h1>
             </div>
@@ -77,25 +77,19 @@
               <input type="text" name="lugar" class = "form-control" id="lugar_noti">
               <h4 class="text-black">Fecha del acontecimiento</h4>
               <input type="date" name="fecha" class = "form-control" id="fecha_noti">
-              <h4 class="text-black">Hora del acontecimiento</h4>
-              <input type="time" name="hora" class = "form-control" id="fecha_noti">
               <h4 class="text-black">Noticia</h4>
               <textarea class="form-control" name="noticia" id="exampleFormControlTextarea1" id="noti" ></textarea>
+              <h4 class="text-black">Palabra clave</h4>
+              <input type="text" name="keyword" class = "form-control" id="keyword_noti">
               <h4 class="text-black">Categoria</h4>
               <select class="form-control" name="categoria"  id="cat_noti">
-                
-              <?php
-        
-
-        ?>
-                <option>Salud</option>
-                <option>Deportes</option>
-                <option>Titulares</option>
+            
+            
               </select>
               <div class="cat-conteiner">
               </div>
             </div>
-              <div class="container2" >
+              <div class="container2">
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Inserte elementos multimedia</label>
                   <input class="form-control" type="file" multiple id="formFile">
