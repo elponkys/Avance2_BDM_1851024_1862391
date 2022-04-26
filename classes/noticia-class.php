@@ -24,23 +24,36 @@ $this->noticia=$noticia;
 $this->telefono=$telefono;
 $this->fecha=$fecha;
 $this->keyword=$keyword;
+
 }
 
 public function registronoticia(){
-    if( $this->emptyInputs()==false){
-        header("location: ./Registro.php?error=emptyInput");
+    if( $this->emptyInputs()===false){
+        header("location: noticia-class.php?error=emptyInput");
         exit();
     }
 
-    $this->register($this->id_usuario,$this->lugar,$this->firma,$this->nombre,$this->descripcion,$this->noticia,$this->telefono,$this->fecha,$this->keyword);
+    $this->RegisterNoticia($this->id_usuario,$this->lugar,$this->firma,$this->nombre,$this->descripcion,$this->noticia,$this->telefono,$this->fecha,$this->keyword);
+}
+
+public function UltimaNoticia(){
+   
+
+    
+$ultimita=$this->LastNoticia($this->id_usuario);
+return $ultimita;
+    
 }
 
 
 private function emptyInputs(){
-    $result;
+    
     if(empty($this->id_usuario) || empty($this->lugar) || empty($this->firma) || empty($this->nombre) || empty($this->descripcion) || empty($this->noticia) || empty($this->telefono)|| empty($this->fecha)|| empty($this->keyword)){
+        header("location: noticia-class.php?error=eaaaaaaaaaaaa");
+        
         $result = false;
     }else{
+        
         $result=true;
     }
     return $result;

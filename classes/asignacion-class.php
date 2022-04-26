@@ -1,5 +1,5 @@
 <?php
-include "../classes/asignacion.connect.php";
+include "asignacion.connect.php";
  class AsignacionContr extends RegisterAsignacion{
 
     
@@ -15,16 +15,16 @@ $this->id_seccion=$id_seccion;
 
 public function registroasignacion(){
     if( $this->emptyInputs()==false){
-        header("location: ./crearnoticia.php?error=emptyInput");
+        header("location: ./crearnoticia.php?error=emptyInput".$this->id_noticia);
         exit();
     }
 
-    $this->register($this->id_noticia,$this->id_seccion);
+    $this->RegisterAsignacion($this->id_noticia,$this->id_seccion);
 }
 
 
 private function emptyInputs(){
-    $result;
+    $result = null;
     if(empty($this->id_noticia) || empty($this->id_seccion)){
         $result = false;
     }else{

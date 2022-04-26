@@ -22,7 +22,7 @@ public function loginsito(){
     $this->sign_in($this->email,$this->contraseña);
 }
 private function emptyInputs(){
-    $result;
+    $result=null;
     if(empty($this->email) || empty($this->contraseña) ){
         $result = false;
     }else{

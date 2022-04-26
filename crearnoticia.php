@@ -64,7 +64,7 @@
     </div>
   </nav>
       <div class="container">
-        <form  id="newnoti" enctype="multipart/form-data" method="POST">
+        <div  id="newnoti" >
             <div class="form-group text">
               <h1 class="text-black">Nueva noticia</h1>
             </div>
@@ -92,12 +92,12 @@
               <div class="container2">
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Inserte elementos multimedia</label>
-                  <input class="form-control" type="file" multiple id="formFile">
+                  <input class="form-control" type="file" multiple="multiple" name="files[]" id="formFile[]">
                   </div>
                   <input type="submit" class="btn btn_pub" id="btn_noti" value="Publicar"></input>
                 </div>
            </div>
-        </form>
+      </div>
        
         <script type="text/javascript" src="java/inicionoti.js"></script>
 </body>

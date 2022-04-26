@@ -13,18 +13,18 @@ $this->id_noticia=$id_noticia;
 $this->multimedia=$multimedia;
 }
 
-public function registroasignacion(){
+public function registroMultimedia(){
     if( $this->emptyInputs()==false){
         header("location: ./crearnoticia.php?error=emptyInput");
         exit();
     }
 
-    $this->register($this->id_noticia,$this->multimedia);
+    $this->RegisterMultimedia($this->id_noticia,$this->multimedia);
 }
 
 
 private function emptyInputs(){
-    $result;
+    $result=null;
     if(empty($this->id_noticia) || empty($this->multimedia)){
         $result = false;
     }else{

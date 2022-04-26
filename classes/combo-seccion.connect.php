@@ -15,7 +15,7 @@ class ComboSeccion extends Dbh
             header("location: ../Registro.php?error=stmtfailed");
             exit();
         }
-        $check;
+        
         if($stmt->rowCount() == 0){
          $stmt = null;
          header("location: ../Registro.php?error=nohaysecciones");

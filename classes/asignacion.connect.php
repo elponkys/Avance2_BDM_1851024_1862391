@@ -1,5 +1,5 @@
 <?php
-include "../classes/dbhclasses.php";
+include_once "dbhclasses.php";
 class RegisterAsignacion extends Dbh
 {
    

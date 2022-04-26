@@ -24,13 +24,25 @@ $(document).ready(function () {
         formData2.append('Fecha', pFecha);
         formData2.append('Keyword', pKeyword);
 
+      
+        
+
         var Categorias = JSON.stringify(pCategoria);
-
         formData2.append('Categorias', Categorias);
+      
 
-        var Imagenes = JSON.stringify(pImagen);
+console.log(pImagen);
+var totalfiles = pImagen.length;
+if (totalfiles > 0) {
+    for (var index = 0; index < totalfiles; index++) {
+        formData2.append("Imagenes[]", pImagen[index]);
+    }
+}
+        //var totalfiles = pImagen.length;
+        //if (totalfiles > 0) {
+        //  formData2.append("Imagenes", pImagen);
 
-        formData2.append('Imagenes', Imagenes);
+        //}
 
 
 
@@ -40,7 +52,7 @@ $(document).ready(function () {
             data: formData2,
             success: function (msg) {
                 console.log(msg);
-                NoticiaSuccess = msg;
+                NoticiaSucces=msg;
             },
             cache: false,
             contentType: false,
@@ -66,7 +78,7 @@ $(document).ready(function () {
     });
     $('#btn_noti').click(function () {
 
-       
+
 
         var Titulo = $("#nom_noti").val();
         var Descripcion = $("#desc_noti").val();
@@ -74,18 +86,36 @@ $(document).ready(function () {
         var Lugar = $("#lugar_noti").val();
         var Fecha = $("#fecha_noti").val();
         var Keyword = $("#keyword_noti").val();
-        var CategoriasLabel = document.getElementsByClassName('Ci');
+        var CategoriasLabel = document.getElementsByClassName('ci');
         var Categoria = [];
+        
 
         for (var i = 0; i < CategoriasLabel.length; i++) {
-            alert("e");
+
             Categoria.push(CategoriasLabel[i].getAttribute('value'));
+
         }
+        
+        
+   
+       // $.each(Categoria, function( index, value ) {
+         //   Categorias.push({val:value});
+          //});
+        //console.log(Categorias);
+        var Imagen = [];
+        var Imagenes = document.getElementById("formFile[]").files;
+        
+        for (var i = 0; i < Imagenes.length; i++) {
 
-        var Imagenes = document.getElementById("formFile").files;
-       
+            Imagen.push(document.getElementById("formFile[]").files[i]);
+            
 
-        CrearNoticia(Titulo, Descripcion, Noticia, Lugar, Fecha, Keyword, Categoria,Imagenes);
+        }
+        //Imagenes.push(CategoriasLabel[i].getAttribute('value'));
+
+        //alert(Imagenes.length);
+
+        CrearNoticia(Titulo, Descripcion, Noticia, Lugar, Fecha, Keyword, Categoria, Imagen);
 
 
         if (NoticiaSuccess == true) {
@@ -95,6 +125,7 @@ $(document).ready(function () {
 
         //Este código se ejecutará cuando le hagas click a #btn_noti
     });
+    var NoticiaSuccess = null;
     var arreglito;
     $('.cat-container').children('.ci').each(function () {
 
