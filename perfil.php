@@ -50,7 +50,7 @@ session_start();
         if (isset($_SESSION["Tipo"]) && $_SESSION["Tipo"] == "Admin") {
         ?>
           <li><a onclick="window.location.href='categorias.php'"  href="#">Crear Categoria</a></li>
-          <li><a href="#">Administrar noticias</a></li>
+          <li><a href="#" onclick="window.location.href='noticiaslist.php'">Administrar noticias</a></li>
           <li><a href="#">Administrar usuarios</a></li>
           <li><a href="#">Reporte de noticias</a></li>
           <li><a  onclick="window.location.href='Registro_reportero.php'" href="#">Agregar Reportero</a></li>

@@ -24,20 +24,20 @@ $(document).ready(function () {
         formData2.append('Fecha', pFecha);
         formData2.append('Keyword', pKeyword);
 
-      
-        
+
+
 
         var Categorias = JSON.stringify(pCategoria);
         formData2.append('Categorias', Categorias);
-      
 
-console.log(pImagen);
-var totalfiles = pImagen.length;
-if (totalfiles > 0) {
-    for (var index = 0; index < totalfiles; index++) {
-        formData2.append("Imagenes[]", pImagen[index]);
-    }
-}
+
+        console.log(pImagen);
+        var totalfiles = pImagen.length;
+        if (totalfiles > 0) {
+            for (var index = 0; index < totalfiles; index++) {
+                formData2.append("Imagenes[]", pImagen[index]);
+            }
+        }
         //var totalfiles = pImagen.length;
         //if (totalfiles > 0) {
         //  formData2.append("Imagenes", pImagen);
@@ -52,7 +52,7 @@ if (totalfiles > 0) {
             data: formData2,
             success: function (msg) {
                 console.log(msg);
-                NoticiaSucces=msg;
+                NoticiaSucces = msg;
             },
             cache: false,
             contentType: false,
@@ -88,27 +88,27 @@ if (totalfiles > 0) {
         var Keyword = $("#keyword_noti").val();
         var CategoriasLabel = document.getElementsByClassName('ci');
         var Categoria = [];
-        
+
 
         for (var i = 0; i < CategoriasLabel.length; i++) {
 
             Categoria.push(CategoriasLabel[i].getAttribute('value'));
 
         }
-        
-        
-   
-       // $.each(Categoria, function( index, value ) {
-         //   Categorias.push({val:value});
-          //});
+
+
+
+        // $.each(Categoria, function( index, value ) {
+        //   Categorias.push({val:value});
+        //});
         //console.log(Categorias);
         var Imagen = [];
         var Imagenes = document.getElementById("formFile[]").files;
-        
+
         for (var i = 0; i < Imagenes.length; i++) {
 
             Imagen.push(document.getElementById("formFile[]").files[i]);
-            
+
 
         }
         //Imagenes.push(CategoriasLabel[i].getAttribute('value'));
@@ -118,10 +118,10 @@ if (totalfiles > 0) {
         CrearNoticia(Titulo, Descripcion, Noticia, Lugar, Fecha, Keyword, Categoria, Imagen);
 
 
-        if (NoticiaSuccess == true) {
-            location.href = "Index.php";
+        if (NoticiaSuccess == "true") {
+            location.href = "../perfil.php";
         }
-
+        location.href = "http://localhost/Avance2_BDM_1851024_1862391/perfil.php";
 
         //Este código se ejecutará cuando le hagas click a #btn_noti
     });
