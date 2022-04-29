@@ -10,8 +10,7 @@ $reNoticia = new SNoticiaContr();
 
 $Si = $reNoticia->fillNoticiasAceptadas();
 
-
-
+$Si10= $reNoticia->fill10Noticias();
 
 ?>
 
@@ -53,7 +52,42 @@ $Si = $reNoticia->fillNoticiasAceptadas();
             </ul>
         </div>
     </nav>
-   
+    <div class="main">
+            <h2>Ultimas Noticias</h2>
+           
+                <?php
+
+                foreach ($Si10 as $Noti10) {
+
+
+                    $id10 = $Noti10['NOTICIA_ID'];
+                    $reMiniatura10 = new VNoticiaContr($id10);
+                    $Min10 = $reMiniatura10->fillminiatura();
+
+                ?>
+                <form action="VistaNoticia.php" class="login"  method="POST">
+                <input type="hidden" name="ID" value="<?php echo $id; ?>"></input>
+                    <div class="card noticard""><div class="image">
+                    <img  src='<?php echo $Min10; ?>' />
+                       
+                    </div>
+                    <div class=" title">
+                        <h1><?php echo ($Noti10['TITULO']) ?></h1>
+                    </div>
+                    <div class="date">
+                        <p>Fecha de la noticia:<?php echo ($Noti10['FECHA_PUBLICACION']) ?></p>
+                    </div>
+                    <div class="des">
+                        <p><?php echo ($Noti10['DESCRIPCION']) ?></p><input type="submit" value="Leer mas..." name="submit"></input>
+                    </div>
+                    </form >
+            
+        </div>
+    <?php
+                }
+    ?>
+
+    </div>
         <!--cards -->
         <div class="main">
             <h2>Noticias subidas a la pagina</h2>

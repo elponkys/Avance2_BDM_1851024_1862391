@@ -12,6 +12,12 @@ public function fillNoticias(){
 }
 
 
+public function fill10Noticias(){
+  
+  
+    return $this->fill_10noticias();
+}
+
 public function fillNoticiasAceptadas(){
   
   

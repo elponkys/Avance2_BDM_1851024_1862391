@@ -21,7 +21,7 @@ class SNoticia extends Dbh
          header("location: ../Registro.php?error=nohaynoticias");
          exit();
         }
-        session_start();
+      
         $NoticiasNA=$stmt->fetchAll(PDO::FETCH_ASSOC);
         
 
@@ -47,12 +47,39 @@ class SNoticia extends Dbh
          header("location: ../Registro.php?error=nohaynoticias");
          exit();
         }
-        session_start();
+        
         $NoticiasA=$stmt->fetchAll(PDO::FETCH_ASSOC);
         
 
         $stmt = null;
       return $NoticiasA;  
+        
+    }
+
+    
+    protected function fill_10noticias()
+    {  
+        $db = $this->connect();
+        $stmt = $db->prepare('CALL sp_Select10NoticiasA();');
+        
+        if (!$stmt->execute(array())) {
+
+            $stmt = null;
+            header("location: ../Registro.php?error=stmtfailed");
+            exit();
+        }
+        
+        if($stmt->rowCount() == 0){
+         $stmt = null;
+         header("location: ../Registro.php?error=nohaynoticias");
+         exit();
+        }
+
+        $Noticias10A=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+
+        $stmt = null;
+      return $Noticias10A;  
         
     }
     
