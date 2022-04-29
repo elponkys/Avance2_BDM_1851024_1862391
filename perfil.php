@@ -20,7 +20,7 @@ session_start();
   <nav class="navbar navbar-light" style="background-color: #000000;">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Pitufinoticias</a>
+        <a class="navbar-brand" onclick="window.location.href='noticia.php'" href="#">Pitufinoticias</a>
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Inicio</a></li>

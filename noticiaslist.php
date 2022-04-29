@@ -65,18 +65,7 @@
       <div class="main">     
         <h2>Noticias subidas a la pagina</h2>
         <div class="cat-conteiner">   
-            <div class="content">   
-                <h4 class="text-black" style="text-align: center;">Descubre las diferencias entre el perejil y el cilandro</h4>
-                <h5 class="text-black">Articulo hecho para diferenciar el cilandro y el perejil</h5>
-                <strong>Noticia hecha por:Antonio Lopez</strong><br>
-                <strong style="font-style: italic;">Fecha de la noticia:20/Enero/2022</strong>
-                <strong class="datos">Estado de la noticia:En redacción</strong>
-                <p class="datos">Desde años el ser humano ha confundido el cilandro por perejil y en este articulo...</p>
-                <input type="button"id="btn_delete" value="Eliminar noticia"></input>
-                <input type="button"id="btn_update" value="Subir noticia"></input>
-                <input type="button"id="btn_update" value="Hacer comentario"></input>
-                <input type="button"id="btn_update" value="Ver noticia"></input>
-            </div>
+          
             </div>
 
 
