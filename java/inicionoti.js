@@ -8,7 +8,7 @@ $(document).ready(function () {
             alert(response);
             var categories = $.parseJSON(response);
             for (let category of categories) {
-                $("select").append(' <option dataid="' + category['SECCION_ID'] + '">' + category['DESCRIPCION'] + '</option>')
+                $("select").append(' <option style="background-color: #CD5C5C" dataid="' + category['SECCION_ID'] + '">' + category['DESCRIPCION'] + '</option>')
             }
             console.log(response);
         }
@@ -31,12 +31,12 @@ $(document).ready(function () {
         formData2.append('Categorias', Categorias);
 
 
-        
-       // var totalfiles = pImagen.length;
+
+        // var totalfiles = pImagen.length;
         //if (totalfiles > 0) {
-          //  for (var index = 0; index < totalfiles; index++) {
-           //     formData2.append("Imagenes[]", pImagen[index]);
-            //}
+        //  for (var index = 0; index < totalfiles; index++) {
+        //     formData2.append("Imagenes[]", pImagen[index]);
+        //}
         //}
         for (const archivo of pImagen) {
             formData2.append("archivos[]", archivo);
@@ -99,25 +99,25 @@ $(document).ready(function () {
             Categoria.push(CategoriasLabel[i].getAttribute('value'));
 
         }
+        var imagenes = 0;
+        var videos = 0;
+        for (var i = 0; i < archivosParaSubir.length; i++) {
+            var checar = archivosParaSubir[i]['type'];
+            let conSubstring = checar.substring(0, 5);
+            if (conSubstring === "image") {
+                imagenes++;
 
-       
-
-        // $.each(Categoria, function( index, value ) {
-        //   Categorias.push({val:value});
-        //});
-        //console.log(Categorias);
-       // var Imagen = [];
-        //var Imagenes = document.getElementById("formFile[]").files;
-
-        //for (var i = 0; i < Imagenes.length; i++) {
-
-          //  Imagen.push(document.getElementById("formFile[]").files[i]);
-
-
-        //}
-        //Imagenes.push(CategoriasLabel[i].getAttribute('value'));
-
-        //alert(Imagenes.length);
+            } else {
+                if (conSubstring === "video") {
+                    videos++;
+                }
+            }
+        }
+        if(imagenes===0 || videos===0){
+            alert("tiene que haber porlomenos una imagen y un video");
+            return;
+        }
+        console.log(archivosParaSubir);
 
         CrearNoticia(Titulo, Descripcion, Noticia, Lugar, Fecha, Keyword, Categoria, archivosParaSubir);
 
@@ -125,7 +125,7 @@ $(document).ready(function () {
         if (NoticiaSuccess == "true") {
             location.href = "../perfil.php";
         }
-        //location.href = "http://localhost/Avance2_BDM_1851024_1862391/perfil.php";
+        location.href = "http://localhost/Avance2_BDM_1851024_1862391/perfil.php";
 
         //Este código se ejecutará cuando le hagas click a #btn_noti
     });

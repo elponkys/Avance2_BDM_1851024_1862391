@@ -2,7 +2,6 @@
 include "../classes/noticia.connect.php";
  class NoticiaContr extends RegisterNoticia{
 
-    
     private $id_usuario;
     private $lugar;
     private $firma;
@@ -27,6 +26,8 @@ $this->keyword=$keyword;
 
 }
 
+
+
 public function registronoticia(){
     if( $this->emptyInputs()===false){
         header("location: noticia-class.php?error=emptyInput");
@@ -35,6 +36,7 @@ public function registronoticia(){
 
     $this->RegisterNoticia($this->id_usuario,$this->lugar,$this->firma,$this->nombre,$this->descripcion,$this->noticia,$this->telefono,$this->fecha,$this->keyword);
 }
+
 
 public function UltimaNoticia(){
    

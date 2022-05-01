@@ -37,7 +37,7 @@ public function registroUsuario(){
 }
 
 private function matchpass(){
-    $result;
+   
     if($this->contraseña !== $this->confirm){
         $result = false;
     }else{
@@ -47,7 +47,7 @@ return $result;
 
 }
 private function emptyInputs(){
-    $result;
+   
     if(empty($this->email) || empty($this->nombre) || empty($this->apellido_m) || empty($this->apellido_p) || empty($this->contraseña) || empty($this->telefono) || empty($this->confirm)){
         $result = false;
     }else{

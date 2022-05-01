@@ -144,26 +144,26 @@ if (isset($_POST["submit"])) {
 
         </p>
         <?php
-          $allowedTypesimg = array('png', 'jpg', 'gif');
-          $allowedTypesvid = array('mp4');
-         
-for ($i = 0; $i < count($mult); $i++) {
-  $posicion_coincidencia = strpos(strval($mult[$i]["ARCHIVO"]), "image/png");
+        $allowedTypesimg = array('png', 'jpg', 'gif');
+        $allowedTypesvid = array('mp4');
 
-  $posicion_coincidencia2 = strpos(strval($mult[$i]["ARCHIVO"]), "image/jpg");
- 
-  $posicion_coincidencia3 = strpos(strval($mult[$i]["ARCHIVO"]), "image/gif");
- 
-  if($posicion_coincidencia===5 || $posicion_coincidencia2===5 || $posicion_coincidencia3===5) {
-?>
-       <img width="200"  height="200" src='<?php  echo $mult[$i]["ARCHIVO"]; ?>' />
+        for ($i = 0; $i < count($mult); $i++) {
+          $posicion_coincidencia = strpos(strval($mult[$i]["ARCHIVO"]), "image/png");
+
+          $posicion_coincidencia2 = strpos(strval($mult[$i]["ARCHIVO"]), "image/jpg");
+
+          $posicion_coincidencia3 = strpos(strval($mult[$i]["ARCHIVO"]), "image/gif");
+
+          if ($posicion_coincidencia === 5 || $posicion_coincidencia2 === 5 || $posicion_coincidencia3 === 5) {
+        ?>
+            <img width="200" height="200" src='<?php echo $mult[$i]["ARCHIVO"]; ?>' ></img>
+          <?php
+          } else { ?>
+            <video width="200" controls height="200" src='<?php echo $mult[$i]["ARCHIVO"]; ?>' ></video>
         <?php
-  }else{?>
-<video width="200"  controls height="200" src='<?php  echo $mult[$i]["ARCHIVO"]; ?>' />
-    <?php
-  }
-}
-?>
+          }
+        }
+        ?>
         <p class="pregunta-texto">
           <?php
 

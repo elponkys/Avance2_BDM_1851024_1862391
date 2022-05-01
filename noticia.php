@@ -66,7 +66,7 @@ $Si10= $reNoticia->fill10Noticias();
 
                 ?>
                 <form action="VistaNoticia.php" class="login"  method="POST">
-                <input type="hidden" name="ID" value="<?php echo $id; ?>"></input>
+                <input type="hidden" name="ID" value="<?php echo $id10; ?>"></input>
                     <div class="card noticard""><div class="image">
                     <img  src='<?php echo $Min10; ?>' />
                        

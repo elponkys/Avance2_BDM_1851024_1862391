@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-<?php
-session_start();
-
-?>
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carts</title>
-  <link rel="stylesheet" href="css/perfil.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carts</title>
+    <link rel="stylesheet" href="css/notilist.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
-  <nav class="navbar navbar-light" style="background-color: #000000;">
+<nav class="navbar navbar-light" style="background-color: #000000;">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" onclick="window.location.href='noticia.php'" href="#">Pitufinoticias</a>
@@ -39,7 +34,7 @@ session_start();
         if (isset($_SESSION["Tipo"]) && $_SESSION["Tipo"] == "Reportero") {
         ?>
           <li><a href="#" onclick="window.location.href='crearnoticia.php'" >Crear noticia</a></li>
-          <li><a href="#" onclick="window.location.href='notilista_pendientes.php'">Mis noticias</a></li>
+          <li><a href="#">Mis noticias</a></li>
 
         <?php
         }
@@ -67,20 +62,14 @@ session_start();
       </ul>
     </div>
   </nav>
-  <div class="header">
-    <?php
-    if (isset($_SESSION["Imagen"])) {
-      $image = $_SESSION["Imagen"];
-    ?>
-      <img width="200" height="200" src='<?php echo $image; ?>' />
-    <?php
-    }
-    ?>
-    <strong class="user"><?php echo $_SESSION["Nombre"];
-                          echo $_SESSION["Apellido_m"];
-                          echo $_SESSION["Apellido_p"]; ?></strong><br>
-    <strong class="email"><?php echo $_SESSION["Correo"]   ?></strong>
-    <a href="Editar.php" class="edit">Editar <i class="fas fa-edit"></i> </a>
-    <a href="" class="btn">Eliminar cuenta <i class="fas fa-edit"></i> </a>
-  </div>
+      <div class="main">     
+        <h2>Noticias rechazadas</h2>
+        <div class="cat-conteiner">   
+          
+            </div>
+
+
+      </div>
+      <script src="./java/notilistrechazadas.js"></script>
+
 </body>

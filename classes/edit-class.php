@@ -15,7 +15,7 @@ class editcon extends Dbh
             header("location: ../perfil.php?error=stmtfailed");
             exit();
         }
-        $check;
+        
         if($stmt->rowCount() == 0){
          $stmt = null;
          header("location: ../perfil.php?error=usernotfound");

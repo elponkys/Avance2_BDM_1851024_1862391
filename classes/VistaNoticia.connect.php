@@ -135,5 +135,31 @@ class VNoticia extends Dbh
    
         
     }
+
+    protected function regresar_Vnoticia($id)
+    {  
+        
+        $db = $this->connect();
+        $stmt = $db->prepare('CALL sp_RegresarNoticia(?);');
+        
+        if (!$stmt->execute(array($id))) {
+
+            $stmt = null;
+            header("location: ../Registro.php?error=stmtfailed");
+            exit();
+        }
+        
+        if($stmt->rowCount() == 0){
+         $stmt = null;
+         header("location: ../Registro.php?error=nohaynoticiaaaaas");
+         exit();
+        }
+        
+      
+
+        $stmt = null;
+   
+        
+    }
 }
 ?>

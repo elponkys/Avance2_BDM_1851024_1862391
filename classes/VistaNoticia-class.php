@@ -45,5 +45,11 @@ public function subirnoticia(){
      $this->subir_Vnoticia($this->id_noticia);
 }
 
+public function Regresarnoticia(){
+  
+ 
+    $this->regresar_Vnoticia($this->id_noticia);
+}
+
 }
 ?>
