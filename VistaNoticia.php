@@ -2,19 +2,26 @@
 
 include "classes/VistaNoticia-class.php";
 
-if (isset($_POST["submit"])) {
 
   try {
+    if (isset($_GET["ID"])) {
+      $id = $_GET["ID"];
+    }else{
+      $id = $_POST["ID"];
+    }
+    session_start();
 
-    $id = $_POST["ID"];
+   
+
     $reNoticia = new VNoticiaContr($id);
     $noti = $reNoticia->fillVNoticias();
     $sec = $reNoticia->fillVsecciones();
     $mult = $reNoticia->fillVmultimedia();
+    $comments = $reNoticia->fillVcomentarios();
   } catch (Exception $error) {
     echo $error;
   }
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +163,10 @@ if (isset($_POST["submit"])) {
 
           if ($posicion_coincidencia === 5 || $posicion_coincidencia2 === 5 || $posicion_coincidencia3 === 5) {
         ?>
-            <img width="200" height="200" src='<?php echo $mult[$i]["ARCHIVO"]; ?>' ></img>
+            <img width="200" height="200" src='<?php echo $mult[$i]["ARCHIVO"]; ?>'></img>
           <?php
           } else { ?>
-            <video width="200" controls height="200" src='<?php echo $mult[$i]["ARCHIVO"]; ?>' ></video>
+            <video width="200" controls height="200" src='<?php echo $mult[$i]["ARCHIVO"]; ?>'></video>
         <?php
           }
         }
@@ -170,22 +177,56 @@ if (isset($_POST["submit"])) {
           echo $noti[0]["TEXTO"];
 
           ?>
+        </p>
         <div class="cont">
           <button id="likebtn">
             <box-icon type='solid' name='heart'></box-icon>
           </button>
           <input type="number" id=input1 value="0" name="" class="btn_num" tabindex="-1">
+          <form action="includes/Crear_comentario_inc.php" class="login" method="POST">
+          <input type="submit" name="submit  href="" id="btn-comment" class="comentarios"> Comentar </input>
+          <input type=hidden name="usuario_noti" placeholder="" value=" <?php echo $_SESSION["IdUsuario"] ?>" class="incoment">
+          <input type=hidden name="noti_noti" placeholder="" value=" <?php echo $id ?>" class="incoment">
+          <input type=text name="comentario" placeholder="" class="incoment">
+      </form>
 
-          <a href="" class="comentarios"> Comentar </a>
-          <input type=text placeholder="" class="incoment">
+        </div>
+        <?php
+
+        for ($i = 0; $i < count($comments); $i++) {
+          $reRespuestas = new VNoticiaContr($comments[$i]["COMENTARIO_ID"]);
+          $respuestas = $reRespuestas->fillVRespuestas();
+        ?>
+
+          <div class="container">
+            <form action="includes/Crear_respuesta_inc.php" class="login" method="POST">
+              <strong><?php echo $comments[$i]["NOMBRE"] ?></strong>
+              <p class="pregunta-texto"><?php echo $comments[$i]["COMENTARIO_TEXT"] ?> </p>
+              <strong><?php echo $comments[$i]["CREATION_DATE"] ?></strong>
+              <input type=hidden name="COMENTARIO_ID" placeholder="" value=" <?php echo $comments[$i]["COMENTARIO_ID"] ?>" class="incoment">
+              <input type=hidden name="NOTICIA_ID" placeholder="" value=" <?php echo $id ?>" class="incoment">
+
+              <?php
+              for ($u = 0; $u < count($respuestas); $u++) {  ?>
+                <strong><?php echo $respuestas[$u]["NOMBRE"] ?></strong>
+                <p class="pregunta-texto"><?php echo $respuestas[$u]["COMENTARIO_TEXT"] ?> </p>
+                <strong><?php echo $respuestas[$u]["CREATION_DATE"] ?></strong>
+              <?php
+              }
+              ?>
+              <input type=text name="respuesta" placeholder="responder..." class="incoment">
+              <input type="submit" name="submit" value="Responder">
+            </form>
+          </div>
+
+        <?php
+        }
+        ?>
         </div>
 
-        <div class="container">
 
-        </div>
-
-        </p>
       </article>
     </section>
   </section>
+  
 </body>

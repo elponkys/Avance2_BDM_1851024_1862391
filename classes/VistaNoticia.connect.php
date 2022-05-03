@@ -31,6 +31,51 @@ class VNoticia extends Dbh
         
     }
 
+    protected function fill_Vcomentarios($id)
+    {  
+        
+        $db = $this->connect();
+        $stmt = $db->prepare('CALL sp_SelectComentarios(?);');
+        
+        if (!$stmt->execute(array($id))) {
+
+            $stmt = null;
+            header("location: ../Registro.php?error=stmtfailed");
+            exit();
+        }
+        
+  
+        
+        $Comentarios=$stmt->fetchAll(PDO::FETCH_ASSOC);
+       
+
+        $stmt = null;
+      return $Comentarios;  
+        
+    }
+
+    protected function fill_VRespuestas($id)
+    {  
+        
+        $db = $this->connect();
+        $stmt = $db->prepare('CALL sp_SelectRespuestas(?);');
+        
+        if (!$stmt->execute(array($id))) {
+
+            $stmt = null;
+            
+            exit();
+        }
+        
+        
+        $Respuestas=$stmt->fetchAll(PDO::FETCH_ASSOC);
+       
+
+        $stmt = null;
+      return $Respuestas;  
+        
+    }
+
     protected function fill_Vsecciones($id)
     {  
         $db = $this->connect();

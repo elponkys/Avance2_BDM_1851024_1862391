@@ -1,5 +1,5 @@
 <?php
-include "../classes/dbhclasses.php";
+include_once "../classes/dbhclasses.php";
 class RegisterSeccion extends Dbh
 {
    

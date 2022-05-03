@@ -8,7 +8,7 @@ $(document).ready(function () {
             alert(response);
             var categories = $.parseJSON(response);
             for (let category of categories) {
-                $("select").append(' <option style="background-color: #CD5C5C" dataid="' + category['SECCION_ID'] + '">' + category['DESCRIPCION'] + '</option>')
+                $("select").append(' <option style="background-color: '+ category['COLOR'] +'" dataid="' + category['SECCION_ID'] + '">' + category['DESCRIPCION'] + '</option>')
             }
             console.log(response);
         }

@@ -33,6 +33,18 @@ public function fillVmultimedia(){
     return $this->fill_Vmultimedia($this->id_noticia);
 }
 
+public function fillVcomentarios(){
+  
+  
+    return $this->fill_Vcomentarios($this->id_noticia);
+}
+
+public function fillVRespuestas(){
+  
+  
+    return $this->fill_VRespuestas($this->id_noticia);
+}
+
 public function fillminiatura(){
   
   

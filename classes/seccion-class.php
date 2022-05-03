@@ -1,5 +1,5 @@
 <?php
-include "../classes/seccion.connect.php";
+include_once "../classes/seccion.connect.php";
 class SeccionContr extends RegisterSeccion
 {
 
