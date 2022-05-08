@@ -64,11 +64,7 @@ $(document).ready(function () {
         });
     }
 
-    /*lleva al otro articulo*/
-    $(".noticard").click(function () {
-        window.location.href = 'noticia.html';
 
-    });
 
     $("#cat_noti").change(function () {
         var selectsito = $(this).children("option:selected").attr("dataid");
