@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/login.css" >
-    
+    <title>Carts</title>
+    <link rel="stylesheet" href="css/notilist.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="java/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
 <nav class="navbar navbar-light" style="background-color: #000000;">
     <div class="container-fluid">
@@ -51,40 +50,38 @@
       </ul>
     </div>
   </nav>
-    <div class="wrapper">
-        <div class="form-container">
-          <div class="form-inner">
-            <form action="includes/edit_inc.php" class="login" enctype="multipart/form-data" method="POST">
-              <h1>Editar Usuario</h1>
-              <div class="field">
-                <input type="text" value="<?php  session_start(); echo $_SESSION['Nombre'];?>" name="nombre" required>
-              </div>
-              <div class="field">
-                <input type="text" value="<?php  echo $_SESSION['Apellido_m'];?>" name="apellido_m" required>
-              </div>
-              <div class="field">
-                <input type="text"value="<?php echo $_SESSION['Apellido_p'];?>" name="apellido_p" required>
-              </div>
-              <div class="field">
-                <input type="text" value="<?php echo $_SESSION['Telefono'];?>"  placeholder="Telefono" name="telefono" required>
-              </div>
-              <div class="field">
-                <input type="email" value="<?php echo $_SESSION['Correo'];?>" placeholder="Correo electronico" name="email" required>
-              </div>
-              <div class="field">
-              <input type="password" value="<?php  echo $_SESSION['Contraseña'];?>" placeholder="Correo electronico" id="psw" name="contraseña" required>
-              </div>
-              <div class="field">
-                <input type="file" placeholder="imagensita" name="imagen">
-              </div>
-              <div class="field btn">
-                <div class="btn-layer"></div>
-                <input type="submit" name="submit" value="Guardar cambios">
-              </div>
-            </form>
-          </div>
-          
-        </div>
-      </div>
-      <script src="./java/loginsito.js"></script>
+    <div class="main">
+    <h2>Noticias</h2>
+        <input type="date" name="fecha" class="form-control" id="fecha_noti1">
+        <h4 class="text-black">Noticia1</h4>
+        <input type="date" name="fecha" class="form-control" id="fecha_noti2">
+        <h4 class="text-black">Noticia2</h4>
+        <h4 class="text-black">Categoria</h4>
+        <select class="form-control" name="categoria" id="cat_noti">
+            <input type="submit" class="btn btn_pub" id="btn_noti" value="BUSCAR"></input>
+            <div class="main">
+                <div class="cat-conteiner" id="catconteiner">
+
+                </div>
+
+
+            </div>
+    </div>
+    <div class="main">
+    <h2>Secciones</h2>
+        <input type="date" name="fecha" class="form-control" id="fechacat_noti1">
+        <h4 class="text-black">Noticia1</h4>
+        <input type="date" name="fecha" class="form-control" id="fechacat_noti2">
+        <h4 class="text-black">Noticia2</h4>
+            <input type="submit" class="btn btn_pub" id="btn_noti2" value="BUSCAR"></input>
+            <div class="main">
+                <div class="cat-conteiner" id="catsito-conteiner">
+
+                </div>
+
+
+            </div>
+    </div>
+    <script src="java/notilistreportes.js"></script>
+
 </body>

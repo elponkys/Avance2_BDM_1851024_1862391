@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+session_destroy();
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,6 +75,7 @@
                 <input type="submit" name="submit" value="Registrar">
               </div>
             </form>
+            <li><a href="#" onclick="window.location.href='noticia.php'" >Entrar como invitado</a></li>
           </div>
           
 <div id="message">

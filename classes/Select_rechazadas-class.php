@@ -1,33 +1,48 @@
 <?php
 include_once  "Select_rechazadas.connect.php";
- class SNoticiare extends SNoticiarech{
+class SNoticiare extends SNoticiarech
+{
 
-    private $id_usuario;
+  private $id_usuario;
 
-    public function __construct($id_usuario){
+  public function __construct($id_usuario)
+  {
 
-        $this->id_usuario=$id_usuario;
-        
-        
-        }
+    $this->id_usuario = $id_usuario;
+  }
 
-public function fillNoticiasre(){
-  
-  
+  public function fillNoticiasre()
+  {
+
+
     return $this->fill_noticiasre($this->id_usuario);
-}
+  }
 
-public function deleteasignacion(){
-  
-  $this->delete_asignacion($this->id_usuario);
-}
+  public function deleteasignacion()
+  {
 
-public function deletemulti(){
-  
+    $this->delete_asignacion($this->id_usuario);
+  }
+
+  public function deletemulti()
+  {
+
     $this->delete_multi($this->id_usuario);
   }
 
+  public function getbusqueda()
+{
+ 
 
+    return $this->get_busqueda($this->id_usuario);
+}
+
+
+public function getbusquedat()
+{
+ 
+
+    return $this->get_busquedat($this->id_usuario);
+}
 
 }
-?>

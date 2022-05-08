@@ -85,6 +85,49 @@ class SNoticiarech extends Dbh
         
     }
 
+    protected function get_busqueda($fecha1)
+    {  
+        
+        $db = $this->connect();
+        $stmt = $db->prepare('CALL sp_Busqueda5(?)');
+        
+        if (!$stmt->execute(array($fecha1))) {
+
+            $stmt = null;
+            header("location: ./crearnoticia.php?error=stmtfailed");
+            exit();
+        }
+      
+        $Reporte=$stmt->fetchAll(PDO::FETCH_ASSOC);
+       
+
+        $stmt = null;
+      return $Reporte;  
+        
+    }
+
+    
+    protected function get_busquedat($fecha1)
+    {  
+        
+        $db = $this->connect();
+        $stmt = $db->prepare('CALL sp_Busqueda5(?)');
+        
+        if (!$stmt->execute(array($fecha1))) {
+
+            $stmt = null;
+            header("location: ./crearnoticia.php?error=stmtfailed");
+            exit();
+        }
+      
+        $Reporte=$stmt->fetchAll(PDO::FETCH_ASSOC);
+       
+
+        $stmt = null;
+      return $Reporte;  
+        
+    }
+
 
 }
 ?>

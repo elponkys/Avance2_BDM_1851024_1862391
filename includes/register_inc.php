@@ -26,8 +26,8 @@ $register->registroUsuario();
   }else{
     exit();
   }
-
-      
+  header("location: ../Registro.php");
+  exit();  
 
   }
   catch(Exception $error){

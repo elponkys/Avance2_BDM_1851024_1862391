@@ -54,6 +54,30 @@ class VNoticia extends Dbh
         
     }
 
+    
+    protected function Borrar_Comentario($id)
+    {  
+        
+        $db = $this->connect();
+        $stmt = $db->prepare('CALL sp_DeleteComentario(?);');
+        
+        if (!$stmt->execute(array($id))) {
+
+            $stmt = null;
+            header("location: ../Registro.php?error=stmtfailed");
+            exit();
+        }
+        
+  
+        
+
+       
+
+        $stmt = null;
+      
+        
+    }
+
     protected function fill_VRespuestas($id)
     {  
         
@@ -206,5 +230,7 @@ class VNoticia extends Dbh
    
         
     }
+
+    
 }
 ?>

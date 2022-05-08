@@ -39,6 +39,12 @@ public function fillVcomentarios(){
     return $this->fill_Vcomentarios($this->id_noticia);
 }
 
+public function BorrarComentario(){
+  
+  
+     $this->Borrar_Comentario($this->id_noticia);
+}
+
 public function fillVRespuestas(){
   
   
@@ -62,6 +68,8 @@ public function Regresarnoticia(){
  
     $this->regresar_Vnoticia($this->id_noticia);
 }
+
+
 
 }
 ?>

@@ -1,16 +1,114 @@
 <!DOCTYPE html>
 <?php
-
 include "classes/VistaNoticia-class.php";
-
+include_once "classes/Buscar-3filtros-class.php";
+include_once "classes/Reportesec-class.php";
+include_once "classes/Reporte-class.php";
+include_once "classes/Select_rechazadas-class.php";
 include "classes/Select_Noticia-class.php";
 
 
-$reNoticia = new SNoticiaContr();
+ 
+    if ($_POST["titulo"]!=null && $_POST["keyword"]!= null && $_POST["fecha1"]!=null && $_POST["fecha2"]!=null) {
+        $titulo = $_POST["titulo"];
+        $keyword = $_POST["keyword"];
+        $fecha1 = $_POST["fecha1"];
+        $fecha2 = $_POST["fecha2"];
+          $reBusqueda= new BusquedaContr($titulo,$keyword,$fecha1,$fecha2);
+        
+          $Si= $reBusqueda->getbusqueda();
+          
 
-$Si = $reNoticia->fillNoticiasAceptadas();
+    
+    
+    }else{ if($_POST["titulo"]!=null && $_POST["keyword"]!=null){
+        $titulo = $_POST["titulo"];
+        $keyword = $_POST["keyword"];
 
-$Si10 = $reNoticia->fill10Noticias();
+    
+          $reBusqueda= new ReportesecContr($titulo,$keyword);
+        
+          $Si= $reBusqueda->getbusqueda();
+          
+
+    
+    }else{if($_POST["titulo"]!=null && $_POST["fecha1"]!=null && $_POST["fecha2"]!=null){
+    
+        $titulo = $_POST["titulo"];
+        $fecha1 = $_POST["fecha1"];
+        $fecha2 = $_POST["fecha2"];
+     
+    
+          $reBusqueda= new ReporteContr($titulo,$fecha1,$fecha2);
+        
+          $Si= $reBusqueda->getbusqueda();
+          echo($Si[0]["TITULO"]);
+    
+    }else{if($_POST["keyword"]!=null && $_POST["fecha1"]!=null && $_POST["fecha2"]!=null){
+        $keyword = $_POST["keyword"];
+        $fecha1 = $_POST["fecha1"];
+        $fecha2 = $_POST["fecha2"];
+    
+          $reBusqueda= new ReporteContr($keyword,$fecha1,$fecha2);
+        
+          $Si= $reBusqueda->getbusquedakw();
+
+    
+    
+    }else{if($_POST["keyword"]!=null){
+    
+        $keyword = $_POST["keyword"];
+      
+    
+          $reBusqueda= new SNoticiare($keyword);
+        
+          $Si= $reBusqueda->getbusqueda();
+          
+
+    
+        
+    }else{if($_POST["fecha1"]!=null && $_POST["fecha2"]!=null){
+    
+    
+        $fecha1 = $_POST["fecha1"];
+        $fecha2 = $_POST["fecha2"];
+    
+    
+          $reBusqueda= new ReportesecContr($fecha1,$fecha2);
+        
+          $Si= $reBusqueda->getbusquedaporfecha();
+          
+
+    
+    }else{if($_POST["titulo"]!=null){
+        $titulo = $_POST["titulo"];
+      
+    
+          $reBusqueda= new SNoticiare($titulo);
+        
+          $Si= $reBusqueda->getbusquedat();
+
+    
+    }
+    
+    }
+    
+    
+    }
+    
+    
+    }
+    
+    
+    }
+    
+    }
+    }
+
+  session_start();
+
+
+
 
 ?>
 
@@ -64,70 +162,22 @@ $Si10 = $reNoticia->fill10Noticias();
       </ul>
     </div>
   </nav>
-    <form action="Busqueda.php" class="login" method="POST">
-    <h1>Titulo</h1>
-    <div class="field">
-        <input type="text" id="titulo"  name="titulo" >
-    </div>
-    <h1>Palabra clave</h1>
-    <div class="field">
-        <input type="text" id="keyword"  name="keyword" >
-    </div>
-    <input type="date" name="fecha1" class="form-control" id="fechaca1">
-    <h4 class="text-black">Noticia1</h4>
-    <input type="date" name="fecha2" class="form-control" id="fechaca2">
-    <h4 class="text-black">Noticia2</h4>
-    <input type="submit" class="btn btn_pub" id="btn_noti2" value="BUSCAR"></input>
 
-    </form>
-    <div class="main">
-        <h2>Ultimas Noticias</h2>
-
-        <?php
-
-        foreach ($Si10 as $Noti10) {
-
-
-            $id10 = $Noti10['NOTICIA_ID'];
-            $reMiniatura10 = new VNoticiaContr($id10);
-            $Min10 = $reMiniatura10->fillminiatura();
-
-        ?>
-            <form action="VistaNoticia.php" class="login" method="POST">
-                <input type="hidden" name="ID" value="<?php echo $id10; ?>"></input>
-                <div class="card noticard""><div class=" image">
-                    <img src='<?php echo $Min10; ?>' />
-
-                </div>
-                <div class=" title">
-                    <h1><?php echo ($Noti10['TITULO']) ?></h1>
-                </div>
-                <div class="date">
-                    <p>Fecha de la noticia:<?php echo ($Noti10['FECHA_PUBLICACION']) ?></p>
-                </div>
-                <div class="des">
-                    <p><?php echo ($Noti10['DESCRIPCION']) ?></p><input type="submit" value="Leer mas..." name="submit"></input>
-                </div>
-            </form>
-
-    </div>
-<?php
-        }
-?>
-
-</div>
 <!--cards -->
 <div class="main">
-    <h2>Noticias subidas a la pagina</h2>
+    <h2>Resultados de la busqueda</h2>
 
     <?php
-
+echo($Si[0]["TITULO"]);
     foreach ($Si as $Noti) {
 
 
         $id = $Noti['NOTICIA_ID'];
+        echo($id);
         $reMiniatura = new VNoticiaContr($id);
+        echo($id);
         $Min = $reMiniatura->fillminiatura();
+        echo($id);
 
     ?>
         <form action="VistaNoticia.php" class="login" method="POST">
