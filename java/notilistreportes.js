@@ -40,7 +40,7 @@ var eliminars = 0;
                 var NoticiasNA = $.parseJSON(response);
                 for (let Noticias of NoticiasNA) {
 
-                $("#catconteiner").append('<div  id="aa" class="content"> <h4  class="text-black"   style="text-align: center ;">' + Noticias['TITULO'] + ' </h4><h5 class="text-black">' + Noticias['DESCRIPCION'] + ' </h5>  <strong style="font-style: italic;">' + Noticias['FECHA_PUBLICACION'] + ' </strong>  <p class="datos">' + Noticias['LIKES'] + ' </p>   <p class="datos">' + Noticias['COMENTARIOS'] + ' </p>  </div>')
+                $("#catconteiner").append('<div  id="aa" class="content"> <h4  class="text-black"   style="text-align: center; color:black!important ;">' + Noticias['TITULO'] + ' </h4><h5 class="text-black">' + Noticias['DESCRIPCION'] + ' </h5>  <strong style="font-style: italic;">' + Noticias['FECHA_PUBLICACION'] + ' </strong>  <p class="datos"> likes que tiene: ' + Noticias['LIKES'] + ' </p>   <p class="datos"> Comentarios que tiene:' + Noticias['COMENTARIOS'] + ' </p>  </div>')
 
                eliminar = eliminar + 1;
                 }
@@ -77,7 +77,7 @@ var eliminars = 0;
                 var NoticiasNA = $.parseJSON(response);
                 for (let Noticias of NoticiasNA) {
 
-                $("#catsito-conteiner").append('<div  id="ee" class="content"> <h5 class="text-black">' + Noticias['DESCRIPCION'] + ' </h5>  <strong style="font-style: italic;">' + Noticias['FECHA_PUBLICACION'] + ' </strong>  <p class="datos">' + Noticias['LIKES'] + ' </p>   <p class="datos">' + Noticias['COMENTARIOS'] + ' </p>  </div>')
+                $("#catsito-conteiner").append('<div  id="ee" class="content"> <h5 class="text-black">' + Noticias['DESCRIPCION'] + ' </h5>  <strong style="font-style: italic;">' + Noticias['FECHA_PUBLICACION'] + ' </strong>  <p  class="datos"> ' + Noticias['LIKES'] + ' </p>   <p class="datos">' + Noticias['COMENTARIOS'] + ' </p>  </div>')
                 eliminars = eliminars + 1;
                
                 }

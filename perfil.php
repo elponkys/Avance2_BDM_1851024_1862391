@@ -54,20 +54,27 @@ session_start();
       </ul>
     </div>
   </nav>
-  <div class="header">
-    <?php
-    if (isset($_SESSION["Imagen"])) {
-      $image = $_SESSION["Imagen"];
-    ?>
-      <img width="200" height="200" src='<?php echo $image; ?>' />
-    <?php
-    }
-    ?>
-    <strong class="user"><?php echo $_SESSION["Nombre"];
-                          echo $_SESSION["Apellido_m"];
-                          echo $_SESSION["Apellido_p"]; ?></strong><br>
-    <strong class="email"><?php echo $_SESSION["Correo"]   ?></strong>
-    <a href="Editar.php" class="edit">Editar <i class="fas fa-edit"></i> </a>
-    <a href="" class="btn">Eliminar cuenta <i class="fas fa-edit"></i> </a>
+  <div class="profile">
+    <div class="header">
+      <?php
+      if (isset($_SESSION["Imagen"])) {
+        $image = $_SESSION["Imagen"];
+      ?>
+        <img style="border-radius: 100px;" width="200" height="200" src='<?php echo $image; ?>' />
+      <?php
+      }
+      ?> 
+    </div>
+    <div class="userdat">
+      <strong class="user"><?php echo $_SESSION["Nombre"].' ';
+                            echo $_SESSION["Apellido_m"].' ';
+                            echo $_SESSION["Apellido_p"]; ?></strong><br>
+      <strong class="email"><?php echo $_SESSION["Correo"]   ?></strong>
+      <a href="Editar.php" class="edit">Editar <i class="fas fa-edit"></i> </a>
+      <a href="" class="btn">Eliminar cuenta <i class="fas fa-edit"></i> </a>
+
+      </div>
   </div>
+
+    
 </body>

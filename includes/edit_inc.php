@@ -16,12 +16,19 @@ if (isset($_POST["submit"])) {
       $fileName = basename($_FILES["imagen"]["name"]);
       $imageType = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
       $allowedTypes = array('png', 'jpg', 'gif');
+      
+      echo("pepino"); 
       if (in_array($imageType, $allowedTypes)) {
         $imageName = $_FILES["imagen"]["tmp_name"];
         $base64Image = base64_encode(file_get_contents($imageName));
         $realImage = 'data:image/' . $imageType . ';base64,' . $base64Image;
 
         $edit = new editcon();
+        
+        echo($id); 
+        
+        echo($nombre); 
+        
         $edit->edit($id,$nombre, $apellido_m, $apellido_p, $email, $contraseña, $telefono, $realImage);
       } else {
         exit();

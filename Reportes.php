@@ -51,11 +51,12 @@
     </div>
   </nav>
     <div class="main">
-    <h2>Noticias</h2>
+      
+    <h1>Reporte de noticias</h1>
+    <h2>Reporte de noticias por categoria y fecha</h2>
+    <h4 class="text-black">Durante estas fechas</h4>
         <input type="date" name="fecha" class="form-control" id="fecha_noti1">
-        <h4 class="text-black">Noticia1</h4>
         <input type="date" name="fecha" class="form-control" id="fecha_noti2">
-        <h4 class="text-black">Noticia2</h4>
         <h4 class="text-black">Categoria</h4>
         <select class="form-control" name="categoria" id="cat_noti">
             <input type="submit" class="btn btn_pub" id="btn_noti" value="BUSCAR"></input>
@@ -68,11 +69,10 @@
             </div>
     </div>
     <div class="main">
-    <h2>Secciones</h2>
+    <h2>Reporte de noticias por fecha</h2>
+    <h4 class="text-black">Durante este tiempo</h4>
         <input type="date" name="fecha" class="form-control" id="fechacat_noti1">
-        <h4 class="text-black">Noticia1</h4>
         <input type="date" name="fecha" class="form-control" id="fechacat_noti2">
-        <h4 class="text-black">Noticia2</h4>
             <input type="submit" class="btn btn_pub" id="btn_noti2" value="BUSCAR"></input>
             <div class="main">
                 <div class="cat-conteiner" id="catsito-conteiner">

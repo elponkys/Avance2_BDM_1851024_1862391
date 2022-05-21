@@ -29,6 +29,7 @@ $this->keyword=$keyword;
 
 
 public function registronoticia(){
+
     if( $this->emptyInputs()===false){
         header("location: noticia-class.php?error=emptyInput");
         exit();

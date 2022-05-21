@@ -10,6 +10,7 @@ body{
     height: 100%;
     background: linear-gradient(-45deg, #4a79df, #082b52);
 }
+
 .imgus{
     position: relative;
     left: 900%;
@@ -25,41 +26,28 @@ body{
     top: 25%;
    
 }
+h1{
+    font-style: italic;
+    text-align: center;
+}
+.pregunta-texto{
+    margin: 10px;
+ }
 #iniciop{
 
     width: 81%;
     height: auto; 
     overflow: hidden;
     margin: 10px auto;
-    background:  rgba(192, 235, 163, 0.637);
+    background:  rgba(241, 146, 146, 0.363);
 }
-
+video{
+    transform: translateY(50%);
+}
 .enlace{
     text-decoration: none;
 }
-#publicaciones a .titulo{
 
-    font-size: 30px;
-    font-family: monospace;
-    color: rgb(11, 28, 175);
-    transition: color .3s;
-}
-#publicaciones a .titulo:hover{
-
-    color: rgb(221, 7, 0);
-
-}
-#publicaciones .datos{
-    color: rgb(65, 25, 25);
-    opacity: .7;
-    transition: color .3s;
-    transition: opacity .3s;
-
-}
-#publicaciones .datos:hover{
-    color:   rgb(1, 2, 97);
-    opacity: 1;
-}
 #publicaciones .img-post{
     width: 300px;
     height: 200px;
@@ -75,9 +63,7 @@ body{
     border-radius: 5px;
     text-decoration: none;
 }
-.container{
-    float: right;
-}
+
 .cont {
     align-self: center;
     color: black;
@@ -113,3 +99,87 @@ button:active{
     width: 50%;
 }
 
+   
+
+.container_comentarios{
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+}
+.user{
+    display: block;
+    width: 100px;
+}
+.user strong{
+    display: block;
+    text-align: center;
+    width: 100px;
+}
+.coment{
+    position: relative;
+    display: flex;
+    padding: 5px;
+    background-color: #67eaf35e;
+ 
+    border-radius: 20px;
+}
+.contenido{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.contenido strong{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    margin-left: 130px;
+}
+.contenido p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-left: 50px;
+}
+.answer{
+    position: relative;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 60px;
+    background-color: #4a79df5e;
+    
+    border-radius: 20px;
+}
+.deletec{
+    background-color: red;
+    color: white;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+}
+.incoment{
+    border-radius: 5px;
+    border: none
+}
+strong.datos{
+    color: black;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+   font-size: 25px;
+
+}
+.noti-texto{
+    font-size: 35px;
+    padding-left: 85px;
+    color: rgb(0, 0, 0);
+}
+span.datos{
+    
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(42, 42, 43);
+    font-size: 30px;
+}

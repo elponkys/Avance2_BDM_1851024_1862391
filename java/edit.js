@@ -1,5 +1,5 @@
 $(document).ready(function () {
-   var NoticiaSucces=null;
+   var NoticiaSuccess=false;
     $.ajax({
         type: "POST",
         url: './includes/combo_seccion_inc.php',
@@ -100,11 +100,10 @@ $(document).ready(function () {
 
             CrearNoticia(idnoticia, Titulo, Descripcion, Noticia, Lugar, Fecha, Keyword, Categoria, archivosParaSubir);
 
-
             if (NoticiaSuccess == "true") {
                 location.href = "../perfil.php";
             }
-            location.href = "http://localhost/Avance2_BDM_1851024_1862391/perfil.php";
+            location.href = "http://localhost/bdm/perfil.php";
 
             //Este código se ejecutará cuando le hagas click a #btn_noti
         });

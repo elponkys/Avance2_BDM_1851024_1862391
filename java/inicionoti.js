@@ -47,8 +47,6 @@ $(document).ready(function () {
 
         //}
 
-
-
         $.ajax({
             url: "includes/crear_noticia_inc.php",
             type: "POST",
@@ -121,7 +119,7 @@ $(document).ready(function () {
         if (NoticiaSuccess == "true") {
             location.href = "../perfil.php";
         }
-        location.href = "http://localhost/Avance2_BDM_1851024_1862391/perfil.php";
+       location.href = "http://localhost/bdm/perfil.php";
 
         //Este código se ejecutará cuando le hagas click a #btn_noti
     });

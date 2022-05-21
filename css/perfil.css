@@ -29,21 +29,29 @@
 .header{
     max-height: 400px;
     width: 100%;
+    text-align: center;
+    /*background-image: url(https://blog.spoongraphics.co.uk/wp-content/uploads/2020/06/thumbnail.png);*/
+}
+.userdat{
+    max-height: 400px;
+    width: 100%;
+    margin-top: 30px;
     align-items: center;
     text-align: center;
     font-size: 50px;
-    background-color: brown;
+    background-color: rgba(156, 109, 109, 0.705);
     /*background-image: url(https://blog.spoongraphics.co.uk/wp-content/uploads/2020/06/thumbnail.png);*/
 }
-
+.profile{
+    margin: 10px;
+}
 .btn{
     font-size: 15px;
    background: rgb(233, 56, 56);
    color: rgb(255, 255, 255);
-   padding:5px;
-   margin: 5px;
+   
    position: absolute;
-   bottom: 30%;
+   bottom: 15%;
    left: 60%;
    border-radius: 5px;
    text-decoration: none;
@@ -55,7 +63,7 @@
     padding:5px;
     margin: 5px;
     position: absolute;
-    bottom: 30%;
+    bottom: 15%;
     left: 30%;
     border-radius: 5px;
     text-decoration: none;

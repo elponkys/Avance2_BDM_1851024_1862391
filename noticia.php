@@ -64,24 +64,25 @@ $Si10 = $reNoticia->fill10Noticias();
       </ul>
     </div>
   </nav>
-    <form action="Busqueda.php" class="login" method="POST">
-    <h1>Titulo</h1>
+    <form action="Busqueda.php" class="buscar" method="POST">
+    <h1 style="color: #000000;">Titulo</h1>
     <div class="field">
         <input type="text" id="titulo"  name="titulo" >
     </div>
-    <h1>Palabra clave</h1>
+    <h1 style="color: #000000;">Palabra clave</h1>
     <div class="field">
         <input type="text" id="keyword"  name="keyword" >
     </div>
-    <input type="date" name="fecha1" class="form-control" id="fechaca1">
-    <h4 class="text-black">Noticia1</h4>
-    <input type="date" name="fecha2" class="form-control" id="fechaca2">
-    <h4 class="text-black">Noticia2</h4>
+    <h1 style="color: #000000;">Durante este tiempo</h1>
+    <input type="date" name="fecha1" class="form-control" id="fechaca1"><br>
+    <input type="date" name="fecha2" class="form-control" id="fechaca2"><br>
+ 
     <input type="submit" class="btn btn_pub" id="btn_noti2" value="BUSCAR"></input>
 
     </form>
+    
+    <h2>Ultimas Noticias</h2>
     <div class="main">
-        <h2>Ultimas Noticias</h2>
 
         <?php
 
@@ -95,7 +96,7 @@ $Si10 = $reNoticia->fill10Noticias();
         ?>
             <form action="VistaNoticia.php" class="login" method="POST">
                 <input type="hidden" name="ID" value="<?php echo $id10; ?>"></input>
-                <div class="card noticard""><div class=" image">
+                <div class="card noticard"><div class=" image">
                     <img src='<?php echo $Min10; ?>' />
 
                 </div>
@@ -106,7 +107,7 @@ $Si10 = $reNoticia->fill10Noticias();
                     <p>Fecha de la noticia:<?php echo ($Noti10['FECHA_PUBLICACION']) ?></p>
                 </div>
                 <div class="des">
-                    <p><?php echo ($Noti10['DESCRIPCION']) ?></p><input type="submit" value="Leer mas..." name="submit"></input>
+                    <p><?php echo ($Noti10['DESCRIPCION']) ?></p><input class="btn_noti" type="submit" value="Leer mas..." name="submit"></input>
                 </div>
             </form>
 
@@ -117,8 +118,9 @@ $Si10 = $reNoticia->fill10Noticias();
 
 </div>
 <!--cards -->
+<h2>Noticias subidas a la pagina</h2>
 <div class="main">
-    <h2>Noticias subidas a la pagina</h2>
+    
 
     <?php
 
@@ -130,9 +132,9 @@ $Si10 = $reNoticia->fill10Noticias();
         $Min = $reMiniatura->fillminiatura();
 
     ?>
-        <form action="VistaNoticia.php" class="login" method="POST">
+        <form action="VistaNoticia.php" class="login" method="POST" >
             <input type="hidden" name="ID" value="<?php echo $id; ?>"></input>
-            <div class="card noticard""><div class=" image">
+            <div class="card noticard"><div class=" image">
                 <img src='<?php echo $Min; ?>' />
 
             </div>
@@ -143,7 +145,7 @@ $Si10 = $reNoticia->fill10Noticias();
                 <p>Fecha de la noticia:<?php echo ($Noti['FECHA_PUBLICACION']) ?></p>
             </div>
             <div class="des">
-                <p><?php echo ($Noti['DESCRIPCION']) ?></p><input type="submit" value="Leer mas..." name="submit"></input>
+                <p><?php echo ($Noti['DESCRIPCION']) ?></p><input type="submit" class="btn_noti"value="Leer mas..." name="submit"></input>
             </div>
         </form>
 

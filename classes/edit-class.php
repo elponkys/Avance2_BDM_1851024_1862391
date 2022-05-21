@@ -21,7 +21,6 @@ class editcon extends Dbh
          header("location: ../perfil.php?error=usernotfound");
          exit();
         }
-        session_start();
         $_SESSION['IdUsuario'] = $ID;
         $_SESSION['Nombre'] = $nombre;
         $_SESSION['Apellido_m'] = $apellido_m;

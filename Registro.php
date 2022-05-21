@@ -43,6 +43,7 @@ session_destroy();
                 <input type="submit" name="submit" value="Entrar">
               </div>
               <div class="signup-link">¿No tienes cuenta? <a href="">Crea tu cuenta ahora</a></div>
+              <div class="signup-link">No quieres hacerte una cuenta pero quieres ver la pagina <a href="#" onclick="window.location.href='noticia.php'" >Entra como invitado</a></div>
             </form >
             <form action="includes/register_inc.php" class="login" enctype="multipart/form-data" method="POST">
               <div class="field">
@@ -75,7 +76,6 @@ session_destroy();
                 <input type="submit" name="submit" value="Registrar">
               </div>
             </form>
-            <li><a href="#" onclick="window.location.href='noticia.php'" >Entrar como invitado</a></li>
           </div>
           
 <div id="message">

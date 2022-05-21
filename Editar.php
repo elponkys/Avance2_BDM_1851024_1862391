@@ -55,7 +55,7 @@
         <div class="form-container">
           <div class="form-inner">
             <form action="includes/edit_inc.php" class="login" enctype="multipart/form-data" method="POST">
-              <h1>Editar Usuario</h1>
+              <h1 style="text-align: center;">Editar Usuario</h1>
               <div class="field">
                 <input type="text" value="<?php  session_start(); echo $_SESSION['Nombre'];?>" name="nombre" required>
               </div>
@@ -72,7 +72,7 @@
                 <input type="email" value="<?php echo $_SESSION['Correo'];?>" placeholder="Correo electronico" name="email" required>
               </div>
               <div class="field">
-              <input type="password" value="<?php  echo $_SESSION['Contraseña'];?>" placeholder="Correo electronico" id="psw" name="contraseña" required>
+              <input type="password" value="<?php  echo $_SESSION['Contraseña'];?>" placeholder="Contraseña" id="psw" name="contraseña" required>
               </div>
               <div class="field">
                 <input type="file" placeholder="imagensita" name="imagen">
@@ -86,5 +86,4 @@
           
         </div>
       </div>
-      <script src="./java/loginsito.js"></script>
 </body>

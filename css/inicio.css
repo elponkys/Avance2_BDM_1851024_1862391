@@ -1,72 +1,134 @@
- *{
+* {
   margin: 0px;
   padding: 0px;
- } 
- body{
-  font-family: arial ;
+
+}
+
+body {
+  font-family: arial;
   width: 100%;
   height: 100%;
   background: linear-gradient(-45deg, #4a79df, #082b52);
- }
- 
- .main{
-  margin: 2%;
- }
- 
- .card{
-  width: 20%;
-  display: inline-block;
-  box-shadow: 2px 2px 20px black;
-  border-radius: 5px; 
-  margin: 2%;
-  background-color: rgb(121, 113, 70) !important;
- }
- 
- .image img{
-   width: 100%;
-   border-top-right-radius: 5px;
-   border-top-left-radius: 5px;
+}
 
-  }
- 
- .title{
-   color: rgb(153, 153, 153);
-   text-align: center;
-   padding: 5px;
-   font-size: 5px;
- }
-h2{
+.main {
+  margin: 2%;
+
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+#titulo {
+  background: transparent;
+  border: hidden;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-color: none;
+}
+
+#keyword {
+  background: transparent;
+  border: hidden;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-color: none;
+}
+
+h1 {
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+.field {
+  height: 40px;
+  width: 100%;
+  padding-left: 15px;
+  border-radius: 15px;
+  background-color: #f7fff42c;
+  border: 1px solid rgb(128, 148, 54);
+  font-size: 20px;
+}
+
+.buscar {
+  width: 90%;
+  position: relative;
+  left: 5%;
+  border-radius: 15px;
+  padding: 5px;
+  background-color: #080f5273;
+}
+
+.card {
+  width: 80%;
+  display: inline-block;
+  box-shadow: 2px 2px 20px rgb(104, 104, 104);
+  border-radius: 5px;
+  margin: 2%;
+  background-color: rgb(72, 131, 155) !important;
+}
+
+.image img {
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+}
+
+.title {
+  color: rgb(66, 66, 66);
+  text-align: center;
+  padding: 5px;
+  font-size: 5px;
+}
+
+h2 {
   color: black !important;
 }
-  .date{
-   color: black;
-    text-align: center;
-    font-style: italic;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
- .des{
-   padding: 3px;
-   color: black;
-   font-family: Arial, Helvetica, sans-serif;
-   text-align: center;
-   padding-top: 10px;
-   border-bottom-right-radius: 5px;
-   border-bottom-left-radius: 5px;
- }
- button{
-   margin-top: 40px;
-   margin-bottom: 10px;
-   background-color: rgb(134, 152, 255);
-   border: none;
-   border-radius: 5px;
-   padding:10px;
- }
- button:hover{
-   background-color: rgb(47, 52, 82);
-   color: white;
-   transition: .5s;
-   cursor: pointer;
- }
- 
 
- 
+.date {
+  color: black;
+  text-align: center;
+  font-style: italic;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.des {
+  padding: 3px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-top: 10px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+button {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: rgb(134, 152, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: rgb(47, 52, 82);
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.btn_pub {
+  background-color: rgb(216, 214, 119);
+}
+
+.btn_noti {
+  background-color: rgb(69, 75, 133);
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  padding: 5px;
+}

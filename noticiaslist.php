@@ -49,8 +49,9 @@
       </ul>
     </div>
   </nav>
+  <h2 style="text-align: center; font-size: 35px;">Noticias subidas a la pagina</h2>
       <div class="main">     
-        <h2>Noticias subidas a la pagina</h2>
+
         <div class="cat-conteiner">   
           
             </div>
